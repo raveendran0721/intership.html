@@ -1,89 +1,288 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Educational Web Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-    header {background: rgba(0, 0, 0, 0.8); color: white; padding: 1rem; text-align: center;}
-    nav {margin-top: 10px;}
-    nav a {color: #fff; margin: 0 10px; text-decoration: none;}
-    nav a:hover {text-decoration: underline;}
-    section {padding: 2rem; background: rgba(0,0,0,0.7); margin: 1rem; border-radius: 10px;}
-    .card {background: rgba(34, 34, 34, 0.8); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;}
-    footer {background: rgba(0, 0, 0, 0.8); text-align: center; padding: 1rem; color: #aaa;}
-    button {background: #00bcd4; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; color: white;}
-    button:hover {background: #0097a7;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnOnline Coding Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0d1117;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #ffca28;
+        }
+
+        /* Hero Section with image */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: #0d1117;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            text-align: left;
+            margin: 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffca28;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-text button {
+            padding: 15px 35px;
+            font-size: 16px;
+            border: none;
+            background: #ffca28;
+            color: #1e3a8a;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .hero-text button:hover {
+            background: #ffc107;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.05);
+            margin: 15px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #ffca28;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .courses h2 {
+            margin-bottom: 40px;
+            color: #ffca28;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .course {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+        }
+
+        .course img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-content h3 {
+            margin-bottom: 10px;
+            color: #ffca28;
+        }
+
+        .course-content p {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: #fff;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer a {
+            color: #ffca28;
+            text-decoration: none;
+        }
+
+        @media(max-width:768px){
+            .hero {
+                flex-direction: column;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Educational Web Page</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#courses">Courses</a>
-      <a href="#papers">Old Question Papers</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>This web page provides educational materials, old question papers, and useful learning resources for students.</p>
-  </section>
+    <!-- Header -->
+    <header>
+        <h1>LearnOnline</h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <section id="courses">
-    <h2>Courses</h2>
-    <div class="card">
-      <h3>HTML & CSS Basics</h3>
-      <p>Learn how to build and style web pages using HTML and CSS.</p>
-    </div>
-    <div class="card">
-      <h3>JavaScript Essentials</h3>
-      <p>Understand the fundamentals of JavaScript to create interactive websites.</p>
-    </div>
-    <div class="card">
-      <h3>Data Science Introduction</h3>
-      <p>Get started with data analysis and visualization techniques.</p>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Learn Coding Online</h2>
+            <p>Master programming languages and build real projects from scratch</p>
+            <button>Start Learning</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=800&q=80" alt="Coding Hero">
+        </div>
+    </section>
 
-  <section id="papers">
-    <h2>Old Question Papers</h2>
-    <div class="card">
-      <p>BCA - Data Structures (2023)</p>
-      <button>Download</button>
-    </div>
-    <div class="card">
-      <p>BCA - Web Technology (2022)</p>
-      <button>Download</button>
-    </div>
-    <div class="card">
-      <p>BCA - Java Programming (2021)</p>
-      <button>Download</button>
-    </div>
-  </section>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="feature">
+            <h3>Expert Coders</h3>
+            <p>Learn from professional developers with real-world experience.</p>
+        </div>
+        <div class="feature">
+            <h3>Flexible Learning</h3>
+            <p>Study at your own pace and revisit lessons anytime.</p>
+        </div>
+        <div class="feature">
+            <h3>Certification</h3>
+            <p>Get verified certificates to showcase your coding skills.</p>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-      <input type="text" placeholder="Your Name" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:none;">
-      <input type="email" placeholder="Your Email" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:none;">
-      <textarea placeholder="Your Message" style="width:100%; padding:8px; height:100px; border-radius:5px; border:none;"></textarea>
-      <br>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <h2>Popular Coding Courses</h2>
+        <div class="course-list">
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1581091012184-4d2d5bfae0d5?fit=crop&w=600&q=80" alt="Web Development">
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, and building interactive websites.</p>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1581276879432-15a6d70f3a7b?fit=crop&w=600&q=80" alt="Python Programming">
+                <div class="course-content">
+                    <h3>Python Programming</h3>
+                    <p>Learn Python for web development, data science, and automation.</p>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1590608897129-79b0a833cc13?fit=crop&w=600&q=80" alt="Machine Learning">
+                <div class="course-content">
+                    <h3>Machine Learning</h3>
+                    <p>Understand algorithms and build predictive models with Python.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Educational Web Page. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 LearnOnline. All Rights Reserved | <a href="#">Privacy Policy</a></p>
+    </footer>
+
 </body>
 </html>
