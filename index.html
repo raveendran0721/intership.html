@@ -3,38 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Study Material</title>
+  <title>Material</title>
   <style>
-    :root{--accent:#0ea5e9;--muted:#6b7280;--bg:#f8fafc}
-    *{box-sizing:border-box}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#0f172a;margin:0;line-height:1.5}
-    header{background:var(--accent);color:white;padding:16px;text-align:center;font-size:1.5rem;font-weight:700}
-    .container{max-width:1000px;margin:0 auto;padding:24px}
-    h2{color:var(--accent)}
-    .materials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
-    .card{background:white;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06);padding:16px}
-    .card h3{margin-top:0}
-    .card a{color:var(--accent);text-decoration:none;font-weight:600}
-    footer{text-align:center;padding:16px;color:var(--muted);font-size:0.9rem;margin-top:30px}
+    :root{--primary:#1d4ed8;--secondary:#9333ea;--card-bg:#ffffff;--text:#111111;--link:#1d4ed8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;background-size:cover;color:#ffffff;line-height:1.6}
+    header{background:rgba(29,78,216,0.85);color:white;padding:20px;text-align:center;font-size:2rem;font-weight:700}
+    .container{max-width:1000px;margin:20px auto;padding:0 20px}
+    h2{color:var(--primary);margin-bottom:12px}
+    .materials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .card{background:rgba(255,255,255,0.9);padding:20px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:transform 0.2s;color:#111111}
+    .card:hover{transform:translateY(-5px)}
+    .card h3{margin-bottom:10px;color:var(--secondary)}
+    .card p{margin-bottom:12px}
+    .card a{color:var(--link);text-decoration:none;font-weight:600}
+    .assignments{margin-top:40px}
+    footer{text-align:center;padding:20px;margin-top:30px;color:#fff;background:rgba(0,0,0,0.6);font-size:0.9rem}
   </style>
 </head>
 <body>
-  <header>Study Material</header>
+  <header>Material</header>
   <div class="container">
     <h2>Subjects</h2>
     <div class="materials">
       <div class="card">
-        <h3>Java Programming</h3>
-        <p>Learn Java fundamentals, object-oriented programming, and real-world examples.</p>
+        <h3>Web Technology</h3>
+        <p>Learn php and modern web frameworks with practical examples.</p>
         <a href="#">Download Notes (PDF)</a>
       </div>
       <div class="card">
-        <h3>Web Development</h3>
-        <p>HTML, CSS, JavaScript, and responsive design techniques explained with examples.</p>
-        <a href="#">View Tutorials</a>
-      </div>
-      <div class="card">
-        <h3>Database Management</h3>
+        <h3>RDMS</h3>
         <p>Understand SQL queries, database design, and normalization concepts.</p>
         <a href="#">Download Guide</a>
       </div>
@@ -45,17 +43,19 @@
       </div>
     </div>
 
-    <h2 style="margin-top:40px">Assignments</h2>
-    <div class="materials">
-      <div class="card">
-        <h3>Data Science Project</h3>
-        <p>Work on a beginner-level Data Science project and upload the report.</p>
-        <a href="#">Download Task</a>
-      </div>
-      <div class="card">
-        <h3>Web Page Design</h3>
-        <p>Design a responsive web page using HTML and CSS.</p>
-        <a href="#">View Instructions</a>
+    <div class="assignments">
+      <h2>Assignments</h2>
+      <div class="materials">
+        <div class="card">
+          <h3>Data Science </h3>
+          <p>Work on a beginner-level Data Science project and upload the report.</p>
+          <a href="#">Download Task</a>
+        </div>
+        <div class="card">
+          <h3>JAVA</h3>
+          <p>question paper</p>
+          <a href="#">View Instructions</a>
+        </div>
       </div>
     </div>
   </div>
