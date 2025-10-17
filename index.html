@@ -1,288 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnOnline Coding Platform</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Design Product Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f9fa;
+      color: #222;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    header h1 { font-size: 1.5rem; color: #0078ff; }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav a:hover { color: #0078ff; }
 
-        body {
-            background: #0d1117;
-            color: #fff;
-            line-height: 1.6;
-        }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .hero p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
 
-        header {
-            background: #1e3a8a;
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 60px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .product-content h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .product-content p {
+      color: #555;
+      line-height: 1.6;
+    }
 
-        header h1 {
-            font-size: 24px;
-        }
+    .features {
+      background: #fff;
+      padding: 60px;
+      text-align: center;
+    }
+    .features h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .feature-box {
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+    .feature-box:hover { background: #0078ff; color: white; }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-        }
+    .pricing {
+      text-align: center;
+      background: #f8f9fa;
+      padding: 60px;
+    }
+    .price-card {
+      background: white;
+      display: inline-block;
+      padding: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .price-card h4 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 2rem;
+      color: #0078ff;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 25px;
+      background: #0078ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover { background: #005ecc; }
 
-        nav a:hover {
-            color: #ffca28;
-        }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+      margin-top: 50px;
+    }
 
-        /* Hero Section with image */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-            background: #0d1117;
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
-            text-align: left;
-            margin: 20px;
-        }
-
-        .hero-text h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #ffca28;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .hero-text button {
-            padding: 15px 35px;
-            font-size: 16px;
-            border: none;
-            background: #ffca28;
-            color: #1e3a8a;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .hero-text button:hover {
-            background: #ffc107;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
-            margin: 20px;
-            text-align: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 15px;
-        }
-
-        /* Features Section */
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .feature {
-            background: rgba(255,255,255,0.05);
-            margin: 15px;
-            padding: 30px 20px;
-            border-radius: 15px;
-            width: 300px;
-            transition: transform 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature h3 {
-            margin-bottom: 15px;
-            color: #ffca28;
-        }
-
-        .feature p {
-            font-size: 16px;
-            color: #fff;
-        }
-
-        /* Courses Section */
-        .courses {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .courses h2 {
-            margin-bottom: 40px;
-            color: #ffca28;
-        }
-
-        .course-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .course {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .course:hover {
-            transform: translateY(-5px);
-        }
-
-        .course img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .course-content {
-            padding: 20px;
-        }
-
-        .course-content h3 {
-            margin-bottom: 10px;
-            color: #ffca28;
-        }
-
-        .course-content p {
-            font-size: 14px;
-            color: #fff;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e3a8a;
-            color: #fff;
-            text-align: center;
-            padding: 25px 20px;
-        }
-
-        footer a {
-            color: #ffca28;
-            text-decoration: none;
-        }
-
-        @media(max-width:768px){
-            .hero {
-                flex-direction: column;
-            }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature {
-                width: 90%;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .product {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+      header {
+        flex-direction: column;
+      }
+      .hero h2 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>DesignCraft</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Product</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Header -->
-    <header>
-        <h1>LearnOnline</h1>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#courses">Courses</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <section class="hero">
+    <h2>Professional Web Design Service</h2>
+    <p>Build stunning and responsive websites for your brand.</p>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Learn Coding Online</h2>
-            <p>Master programming languages and build real projects from scratch</p>
-            <button>Start Learning</button>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=800&q=80" alt="Coding Hero">
-        </div>
-    </section>
+  <section class="product">
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Web Design Demo">
+    <div class="product-content">
+      <h3>Modern Design, Powerful Results</h3>
+      <p>Our web design product delivers sleek, responsive, and SEO-friendly websites that make your business stand out online. Get complete customization, clean layouts, and performance optimization for every page.</p>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="feature">
-            <h3>Expert Coders</h3>
-            <p>Learn from professional developers with real-world experience.</p>
-        </div>
-        <div class="feature">
-            <h3>Flexible Learning</h3>
-            <p>Study at your own pace and revisit lessons anytime.</p>
-        </div>
-        <div class="feature">
-            <h3>Certification</h3>
-            <p>Get verified certificates to showcase your coding skills.</p>
-        </div>
-    </section>
+  <section class="features">
+    <h3>Key Features</h3>
+    <div class="features-grid">
+      <div class="feature-box">💻 Responsive Design</div>
+      <div class="feature-box">⚡ Fast Loading</div>
+      <div class="feature-box">🎨 Custom Branding</div>
+      <div class="feature-box">🔒 Secure & Reliable</div>
+    </div>
+  </section>
 
-    <!-- Courses Section -->
-    <section class="courses" id="courses">
-        <h2>Popular Coding Courses</h2>
-        <div class="course-list">
-            <div class="course">
-                <img src="https://images.unsplash.com/photo-1581091012184-4d2d5bfae0d5?fit=crop&w=600&q=80" alt="Web Development">
-                <div class="course-content">
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, and building interactive websites.</p>
-                </div>
-            </div>
-            <div class="course">
-                <img src="https://images.unsplash.com/photo-1581276879432-15a6d70f3a7b?fit=crop&w=600&q=80" alt="Python Programming">
-                <div class="course-content">
-                    <h3>Python Programming</h3>
-                    <p>Learn Python for web development, data science, and automation.</p>
-                </div>
-            </div>
-            <div class="course">
-                <img src="https://images.unsplash.com/photo-1590608897129-79b0a833cc13?fit=crop&w=600&q=80" alt="Machine Learning">
-                <div class="course-content">
-                    <h3>Machine Learning</h3>
-                    <p>Understand algorithms and build predictive models with Python.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="pricing">
+    <h3>Pricing</h3>
+    <div class="price-card">
+      <h4>Web Design Package</h4>
+      <div class="price">₹4999</div>
+      <p>Includes 3 pages + responsive design + SEO setup</p>
+      <button onclick="alert('Thank you for your interest! We’ll contact you soon.')">Buy Now</button>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2025 LearnOnline. All Rights Reserved | <a href="#">Privacy Policy</a></p>
-    </footer>
-
+  <footer>
+    © 2025 DesignCraft | All Rights Reserved
+  </footer>
 </body>
 </html>
